@@ -7,5 +7,6 @@
     <string name="best_languages_title">Best Languages</string>
     <string name="no_items_found">No items found</string>
     <string name="error_loading_list">Error loading list</string>
+    <string name="rank"># %1$s</string>
     <string name="best_language">%1$s - %2$s</string>
 </resources>

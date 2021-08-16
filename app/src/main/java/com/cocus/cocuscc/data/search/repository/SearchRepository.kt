@@ -6,5 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface SearchRepository {
 
     fun searchUser(username: String): Flow<SearchResponse>
-    //fun retrieveCache(): Flow<Users>
+    fun retrieveCache(): Flow<List<SearchResponse>>
+    fun updateCache(searchResponse: SearchResponse): Flow<Boolean>
 }

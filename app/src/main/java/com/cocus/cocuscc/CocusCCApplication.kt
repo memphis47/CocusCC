@@ -1,10 +1,7 @@
 package com.cocus.cocuscc
 
 import android.app.Application
-import com.cocus.cocuscc.di.AppModule
-import com.cocus.cocuscc.di.DaggerSearchUserComponent
-import com.cocus.cocuscc.di.NetworkModule
-import com.cocus.cocuscc.di.SearchUserComponent
+import com.cocus.cocuscc.di.*
 
 class CocusCCApplication : Application() {
 
@@ -23,7 +20,9 @@ class CocusCCApplication : Application() {
 
     fun initializeComponent(): SearchUserComponent {
         searchUserComponent = DaggerSearchUserComponent.builder()
-            .appModule(AppModule(this)).networkModule(NetworkModule()).build()
+            .appModule(AppModule(this))
+            .roomModule(RoomModule(this))
+            .networkModule(NetworkModule()).build()
         return searchUserComponent
     }
 }

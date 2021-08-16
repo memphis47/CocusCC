@@ -1,7 +1,9 @@
 package com.cocus.cocuscc.data.search.model
 
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class User(
     val username: String,
     val name: String,
