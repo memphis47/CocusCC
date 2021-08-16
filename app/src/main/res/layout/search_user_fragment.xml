@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <br.com.zup.multistatelayout.MultiStateLayout
+        android:id="@+id/multiStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msl_emptyLayout="@layout/empty_view"
+        app:msl_errorLayout="@layout/error_view"
+        app:msl_loadingLayout="@layout/loading_view"
+        app:msl_state="content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bottom_line_edit_text"
+                android:hint="@string/search_et_hint"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/search_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:contentDescription="@string/search_user_button_btn_dscr"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="@id/search_et"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/search_et"
+                app:layout_constraintTop_toTopOf="@id/search_et"
+                app:tint="@color/white" />
+
+
+            <include
+                android:id="@+id/search_result_layout"
+                layout="@layout/search_result_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_et" />
+
+            <include
+                android:id="@+id/user_header_layout"
+                layout="@layout/user_header_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_result_layout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/last_search_rv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_header_layout"
+                tools:listitem="@layout/search_result_content_layout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </br.com.zup.multistatelayout.MultiStateLayout>
+</layout>

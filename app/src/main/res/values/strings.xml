@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CocusCC</string>
+    <string name="search_user_button_btn_dscr">search user button</string>
+    <string name="search_et_hint">Username</string>
+    <string name="rank_title">Rank</string>
+    <string name="username_title">Username</string>
+    <string name="best_languages_title">Best Languages</string>
+    <string name="no_items_found">No items found</string>
+    <string name="error_loading_list">Error loading list</string>
+    <string name="best_language">%1$s - %2$s</string>
+</resources>
